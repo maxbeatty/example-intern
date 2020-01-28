@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/intern/schemas/config.json",
+
+  "coverage": "build/src/**/*.js",
+  "suites": "build/tests/unit/**/*.js",
+  "functionalSuites": "build/tests/functional/**/*.js",
+  "reporters": [{ "name": "runner" }],
+  "serverPort": 8766,
+  "browser": {
+    "loader": "systemjs",
+    "plugins": {
+      "script": "tests/support/systemjs.config.js",
+      "useLoader": true
+    }
+  },
+  "connectTimeout": 60000,
+  "functionalTimeouts": {
+    "executeAsync": 10000,
+    "find": 10000,
+    "pageLoad": 30000
+  },
+  "capabilities": {
+    "idle-timeout": 60,
+    "fixSessionCapabilities": "no-detect"
+  },
+  "maxConcurrency": 2
+}
